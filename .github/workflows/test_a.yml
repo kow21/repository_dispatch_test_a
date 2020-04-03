@@ -10,8 +10,7 @@ jobs:
     steps:
       - name: send
         run:  |
-          curl -X POST https://api.github.com/repos/ kow21 /
-repository_dispatch_test_b /dispatches \
+          curl -X POST https://api.github.com/repos/kow21/repository_dispatch_test_b /dispatches \
           -H 'Accept: application/vnd.github.everest-preview+json' \
           -u ${{ secrets.ACCESS_TOKEN }} \
           --data '{"event_type": "send_message", "client_payload": { "repository": "'"$GITHUB_REPOSITORY"'" }}'
