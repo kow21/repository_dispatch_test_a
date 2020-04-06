@@ -8,7 +8,7 @@ jobs:
   signals:
     runs-on: ubuntu-latest
     steps:
-      - name: send
+      - name: senda
         run:  |
           curl -X POST -H "Authorization: token ${{ SECRETS.ACCESS_TOKEN}}" \
           -H "content-Type: application/json" \
