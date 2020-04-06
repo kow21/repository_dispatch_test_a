@@ -2,14 +2,12 @@ name: remote test__push observe
 
 on :
   push:
-  repository_dispatch:
 
 jobs:
   ping-pong:
     runs-on: ubuntu-latest
     steps:
       - name: PING - Dispatch initiating repository event
-        if: github.event.action != 'pong'
         run: |
           curl -X POST https://api.github.com/repos/kow21/repository_dispatch_test_b/dispatches \
           -H 'Accept: application/vnd.github.everest-preview+json' \
